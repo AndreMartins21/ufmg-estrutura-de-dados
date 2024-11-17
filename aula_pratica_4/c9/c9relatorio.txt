@@ -1,0 +1,10 @@
+1. Vetor x está sendo alocado com 10, mas tentam atribuir o valor 0 na 11° posição. Solução: Setar o malloc para 11 
+
+2.
+==24840== Invalid write of size 4
+==24840==    at 0x10916B: f (c9correto.c:6)
+==24840==    by 0x109180: main (c9correto.c:11)
+==24840==  Address 0x4a9e068 is 0 bytes after a block of size 40 alloc'd
+==24840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24840==    by 0x10915E: f (c9correto.c:5)
+==24840==    by 0x109180: main (c9correto.c:11)

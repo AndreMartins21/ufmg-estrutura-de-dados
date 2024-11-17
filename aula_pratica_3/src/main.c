@@ -6,22 +6,6 @@
 #include "../include/fibonacci.h"
 
 
-// int main(){
-//     printf("\n");
-//     for(int i = 30; i < 100; i++){
-//         // printf("Fatorial de %i = %lli\n", i, fatorial_iterativo(i));
-//         printf("Fatorial de %i = %lli\n", i, fatorial_recursivo(i));
-//     }
-
-//     printf("\n");
-//     for(int i = 0; i < 40; i++){
-//         // printf("Sequência Fibonacci de %i = %i\n", i, fibonacci_recursivo(i));
-//         printf("Sequência Fibonacci de %i = %i\n", i, fibonacci_iterativo(i));
-//     }
-// }
-
-
-// Função para parsear o input e selecionar a tarefa e método
 int parse_input(int argc, char *argv[], int *n, char **task, char **method) {
     if (argc != 4) {
         printf("Uso: %s <número> <tarefa> <método>\n", argv[0]);
@@ -35,6 +19,7 @@ int parse_input(int argc, char *argv[], int *n, char **task, char **method) {
     *method = argv[3];
     return 1;
 }
+
 
 int main(int argc, char *argv[]) {
     int n;

@@ -1,0 +1,8 @@
+1. Estava alocando somente 26 espaços para as letras, sem considerar o caráter nulo. Portanto, a solução é alocar 27 no calloc do alphabet.
+
+2.
+==22888== Invalid write of size 1
+==22888==    at 0x1091BC: main (c7.c:10)
+==22888==  Address 0x4a9e05a is 0 bytes after a block of size 26 alloc'd
+==22888==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22888==    by 0x109183: main (c7.c:5)

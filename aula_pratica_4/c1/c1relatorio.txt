@@ -1,0 +1,10 @@
+1 - identifiquei que está alocando dinamicamente 10 int, mas será preenchido 11
+2 - 
+==19313== Invalid write of size 4
+==19313==    at 0x1091B8: main (c1.c:9)
+==19313==  Address 0x4a9e068 is 0 bytes after a block of size 40 alloc'd
+==19313==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19313==    by 0x109185: main (c1.c:6)
+==19313== 
+
+3 - Basta trocar o 10 por 11 no malloc

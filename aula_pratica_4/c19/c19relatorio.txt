@@ -1,0 +1,28 @@
+1.
+-> buf não foi inicializada
+
+2.
+==28714== Invalid write of size 1
+==28714==    at 0x49016D7: _IO_str_overflow (strops.c:133)
+==28714==    by 0x48FFE33: _IO_default_xsputn (genops.c:399)
+==28714==    by 0x48FFE33: _IO_default_xsputn (genops.c:370)
+==28714==    by 0x48E714C: outstring_func (vfprintf-internal.c:239)
+==28714==    by 0x48E714C: __vfprintf_internal (vfprintf-internal.c:1263)
+==28714==    by 0x48F3988: __vsprintf_internal (iovsprintf.c:95)
+==28714==    by 0x48D2927: sprintf (sprintf.c:30)
+==28714==    by 0x1092A5: printSum (c19correto.c:22)
+==28714==    by 0x1092DD: main (c19correto.c:28)
+==28714==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==28714== 
+==28714== 
+==28714== Process terminating with default action of signal 11 (SIGSEGV)
+==28714==  Access not within mapped region at address 0x0
+==28714==    at 0x49016D7: _IO_str_overflow (strops.c:133)
+==28714==    by 0x48FFE33: _IO_default_xsputn (genops.c:399)
+==28714==    by 0x48FFE33: _IO_default_xsputn (genops.c:370)
+==28714==    by 0x48E714C: outstring_func (vfprintf-internal.c:239)
+==28714==    by 0x48E714C: __vfprintf_internal (vfprintf-internal.c:1263)
+==28714==    by 0x48F3988: __vsprintf_internal (iovsprintf.c:95)
+==28714==    by 0x48D2927: sprintf (sprintf.c:30)
+==28714==    by 0x1092A5: printSum (c19correto.c:22)
+==28714==    by 0x1092DD: main (c19correto.c:28)

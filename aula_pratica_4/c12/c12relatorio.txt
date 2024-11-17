@@ -1,0 +1,7 @@
+1. Basicamente não está inicializando a variável x, e já está fazendo uma comparação usando if. Solução: Inicializá-la como 0
+
+2.
+$ valgrind -q ./c
+==26945== Conditional jump or move depends on uninitialised value(s)
+==26945==    at 0x109159: main (c12correto.c:6)
+==26945==

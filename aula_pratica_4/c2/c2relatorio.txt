@@ -1,0 +1,32 @@
+1 - identifiquei que o vetor 'a' apresenta 10 elementos, e o loop para printar os valores de 'a' está indo de 0 a 10, ou seja 11 elementos.
+2 - 
+==19958== Conditional jump or move depends on uninitialised value(s)
+==19958==    at 0x48E8AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==19958==    by 0x48D279E: printf (printf.c:33)
+==19958==    by 0x1091F1: main (c2.c:11)
+==19958== 
+==19958== Use of uninitialised value of size 8
+==19958==    at 0x48CC2EB: _itoa_word (_itoa.c:177)
+==19958==    by 0x48E7ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==19958==    by 0x48D279E: printf (printf.c:33)
+==19958==    by 0x1091F1: main (c2.c:11)
+==19958== 
+==19958== Conditional jump or move depends on uninitialised value(s)
+==19958==    at 0x48CC2FC: _itoa_word (_itoa.c:177)
+==19958==    by 0x48E7ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==19958==    by 0x48D279E: printf (printf.c:33)
+==19958==    by 0x1091F1: main (c2.c:11)
+==19958== 
+==19958== Conditional jump or move depends on uninitialised value(s)
+==19958==    at 0x48E85C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==19958==    by 0x48D279E: printf (printf.c:33)
+==19958==    by 0x1091F1: main (c2.c:11)
+==19958== 
+==19958== Conditional jump or move depends on uninitialised value(s)
+==19958==    at 0x48E7C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==19958==    by 0x48D279E: printf (printf.c:33)
+==19958==    by 0x1091F1: main (c2.c:11)
+==19958== 
+0 1 2 3 4 5 6 7 8 0
+
+3 - Ou trocar a condicional para i < 10, ou setar a qtd_elementos-1 em uma variável

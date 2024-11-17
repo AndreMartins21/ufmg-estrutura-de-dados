@@ -1,0 +1,18 @@
+1. A memória alocada para intArray não está sendo liberada. Solução: basta adicionar um free(intArray) no final do programa
+
+2.
+$ valgrind --leak-check=full ./c5
+==22041== HEAP SUMMARY:
+==22041==     in use at exit: 4,000 bytes in 1 blocks
+==22041==   total heap usage: 2 allocs, 1 frees, 5,024 bytes allocated
+==22041== 
+==22041== 4,000 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==22041==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22041==    by 0x1091E7: main (c5.c:9)
+==22041== 
+==22041== LEAK SUMMARY:
+==22041==    definitely lost: 4,000 bytes in 1 blocks
+==22041==    indirectly lost: 0 bytes in 0 blocks
+==22041==      possibly lost: 0 bytes in 0 blocks
+==22041==    still reachable: 0 bytes in 0 blocks
+==22041==         suppressed: 0 bytes in 0 blocks

@@ -1,0 +1,10 @@
+1. Divisão por zero, devido a b = 0. Basta trocar b = 1
+
+2.
+$ valgrind -q ./c 
+==28357== Process terminating with default action of signal 8 (SIGFPE)
+==28357==  Integer divide by zero at address 0x1002D86E71
+==28357==    at 0x10913B: actual_calc (c16correto.c:6)
+==28357==    by 0x109170: calc (c16correto.c:15)
+==28357==    by 0x109189: main (c16correto.c:20)
+Floating point exception (core dumped)

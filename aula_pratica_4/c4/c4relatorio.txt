@@ -1,0 +1,17 @@
+1. 
+-> A string 'text' não está sendo inicializada em nenhum lugar, apenas dando um free no final. Solução: Inicializei como NULL
+-> rotation3D não estava sendo alocada na memória. E estavam tentando usar os atributos dela. Solução: Alocar com malloc
+-> Após rotation3D ter a memória alocada, é necessário liberar a memória de cada elemento dos dados desse objeto. Solução: Iterar sobre as linhas e deletar o data[i]
+2.
+$ valgrind -q ./c4
+==21415== Use of uninitialised value of size 8
+==21415==    at 0x10917A: main (c4.c:13)
+==21415== 
+==21415== Invalid write of size 4
+==21415==    at 0x10917A: main (c4.c:13)
+==21415==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==21415== 
+==21415== 
+==21415== Process terminating with default action of signal 11 (SIGSEGV)
+==21415==  Access not within mapped region at address 0x0
+==21415==    at 0x10917A: main (c4.c:13)

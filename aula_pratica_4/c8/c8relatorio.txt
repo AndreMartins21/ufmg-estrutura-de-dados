@@ -1,0 +1,10 @@
+1. A string source está com 26 char alocados, mas a iteração está tentado obter o 26° elemento, sendo que só vai até o 25°. Solução: Alocar 27 elementos para essa string.
+
+2.
+valgrind -q ./c8
+==24349== Invalid read of size 1
+==24349==    at 0x1091D2: main (c8.c:9)
+==24349==  Address 0x4a9e0ba is 0 bytes after a block of size 26 alloc'd
+==24349==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24349==    by 0x1091B1: main (c8.c:6)
+==24349==

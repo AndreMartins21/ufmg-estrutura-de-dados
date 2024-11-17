@@ -1,0 +1,41 @@
+1. Basicamente faltou inicializar a variável 'fact' com 1
+
+2. 
+$ valgrind --leak-check=full ./c
+==26660== Invalid write of size 2
+==26660==    at 0x1091B4: main (c11correto.c:9)
+==26660==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26660==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x10919E: main (c11correto.c:8)
+==26660== 
+==26660== Invalid read of size 1
+==26660==    at 0x484ED24: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==26660==    by 0x48D279E: printf (printf.c:33)
+==26660==    by 0x1091E2: main (c11correto.c:11)
+==26660==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26660==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x10919E: main (c11correto.c:8)
+==26660== 
+==26660== Invalid read of size 1
+==26660==    at 0x48FD734: _IO_new_file_xsputn (fileops.c:1218)
+==26660==    by 0x48FD734: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==26660==    by 0x48E900B: outstring_func (vfprintf-internal.c:239)
+==26660==    by 0x48E900B: __vfprintf_internal (vfprintf-internal.c:1517)
+==26660==    by 0x48D279E: printf (printf.c:33)
+==26660==    by 0x1091E2: main (c11correto.c:11)
+==26660==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26660==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x10919E: main (c11correto.c:8)
+==26660== 
+==26660== Invalid read of size 1
+==26660==    at 0x48534C8: mempcpy (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x48FD664: _IO_new_file_xsputn (fileops.c:1235)
+==26660==    by 0x48FD664: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==26660==    by 0x48E900B: outstring_func (vfprintf-internal.c:239)
+==26660==    by 0x48E900B: __vfprintf_internal (vfprintf-internal.c:1517)
+==26660==    by 0x48D279E: printf (printf.c:33)
+==26660==    by 0x1091E2: main (c11correto.c:11)
+==26660==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26660==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x10919E: main (c11correto.c:8)

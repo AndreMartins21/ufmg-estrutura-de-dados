@@ -1,0 +1,20 @@
+1. Problemas:
+-> Loop infinito, sem condição de break;
+-> Está alocando dinamicamente na variável p, sem dar free, dentro do loop. Vai ter um gasto de memória absurdo caso rode esse programa
+
+2.
+-> PS: Não rodei esse programa dessa forma, já coloquei um break bem na primeira iteração
+==25541== HEAP SUMMARY:
+==25541==     in use at exit: 128 bytes in 1 blocks
+==25541==   total heap usage: 2 allocs, 1 frees, 1,152 bytes allocated
+==25541== 
+==25541== 128 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==25541==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25541==    by 0x10917E: main (c10correto.c:9)
+==25541== 
+==25541== LEAK SUMMARY:
+==25541==    definitely lost: 128 bytes in 1 blocks
+==25541==    indirectly lost: 0 bytes in 0 blocks
+==25541==      possibly lost: 0 bytes in 0 blocks
+==25541==    still reachable: 0 bytes in 0 blocks
+==25541==         suppressed: 0 bytes in 0 blocks

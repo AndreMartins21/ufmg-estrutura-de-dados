@@ -1,0 +1,33 @@
+1. O problema está na função resizeArray. O ponteiro dPtr recebe o novo endereço alocado por realloc, mas isso não é atribuído ao array->data,
+fazendo com que o ponteiro original do array->data fique perdido, ocorrendo um vazamento de memória.
+A solução mais trivial é re-escrever essa função, fazendo com que o array->data receba o realloc(array->data, ...)
+
+2.
+$ valgrind --leak-check=full ./c6
+==22624== Invalid free() / delete / delete[] / realloc()
+==22624==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22624==    by 0x109215: main (c6.c:21)
+==22624==  Address 0x4a9e090 is 0 bytes inside a block of size 40 free'd
+==22624==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22624==    by 0x1091B4: resizeArray (c6.c:12)
+==22624==    by 0x109202: main (c6.c:19)
+==22624==  Block was alloc'd at
+==22624==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22624==    by 0x1091EC: main (c6.c:18)
+==22624== 
+==22624== 
+==22624== HEAP SUMMARY:
+==22624==     in use at exit: 60 bytes in 1 blocks
+==22624==   total heap usage: 3 allocs, 3 frees, 116 bytes allocated
+==22624== 
+==22624== 60 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==22624==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==22624==    by 0x1091B4: resizeArray (c6.c:12)
+==22624==    by 0x109202: main (c6.c:19)
+==22624== 
+==22624== LEAK SUMMARY:
+==22624==    definitely lost: 60 bytes in 1 blocks
+==22624==    indirectly lost: 0 bytes in 0 blocks
+==22624==      possibly lost: 0 bytes in 0 blocks
+==22624==    still reachable: 0 bytes in 0 blocks
+==22624==         suppressed: 0 bytes in 0 blocks

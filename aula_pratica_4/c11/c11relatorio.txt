@@ -1,0 +1,36 @@
+1.
+-> Alocaram somente 8 bytes para a string msg, mas precisaria de 10: 9 para "Holberton" e 1 para o terminador "\0".
+-> Faltou liberar a memória de msg no final da execução
+
+2.
+$ valgrind -q ./c
+==26618== Invalid write of size 2
+==26618==    at 0x1091B4: main (c11correto.c:9)
+==26618==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26618==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26618==    by 0x10919E: main (c11correto.c:8)
+==26618== 
+==26618== Invalid read of size 1
+==26618==    at 0x484ED24: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26618==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==26618==    by 0x48D279E: printf (printf.c:33)
+==26618==    by 0x1091E2: main (c11correto.c:11)
+==26618==  Address 0x4a9e048 is 0 bytes after a block of size 8 alloc'd
+==26618==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26618==    by 0x10919E: main (c11correto.c:8)
+
+$ valgrind --leak-check=full ./c
+==26660== HEAP SUMMARY:
+==26660==     in use at exit: 8 bytes in 1 blocks
+==26660==   total heap usage: 2 allocs, 1 frees, 1,032 bytes allocated
+==26660== 
+==26660== 8 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==26660==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26660==    by 0x10919E: main (c11correto.c:8)
+==26660== 
+==26660== LEAK SUMMARY:
+==26660==    definitely lost: 8 bytes in 1 blocks
+==26660==    indirectly lost: 0 bytes in 0 blocks
+==26660==      possibly lost: 0 bytes in 0 blocks
+==26660==    still reachable: 0 bytes in 0 blocks
+==26660==         suppressed: 0 bytes in 0 blocks

@@ -1,0 +1,24 @@
+1. Vazamento de memória: o bloco de memória de 19 bytes da linha 8 não foi liberado antes que p fosse sobrescrito na próxima linha, tornando-o inacessível.
+Solução: Uso do free(p) depois da linha 8.
+
+2.
+$ valgrind --leak-check=full ./c
+
+==27273== HEAP SUMMARY:
+==27273==     in use at exit: 35 bytes in 2 blocks
+==27273==   total heap usage: 3 allocs, 1 frees, 47 bytes allocated
+==27273== 
+==27273== 16 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==27273==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27273==    by 0x1091A6: main (c13correto.c:11)
+==27273== 
+==27273== 19 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==27273==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27273==    by 0x10917E: main (c13correto.c:8)
+==27273== 
+==27273== LEAK SUMMARY:
+==27273==    definitely lost: 35 bytes in 2 blocks
+==27273==    indirectly lost: 0 bytes in 0 blocks
+==27273==      possibly lost: 0 bytes in 0 blocks
+==27273==    still reachable: 0 bytes in 0 blocks
+==27273==         suppressed: 0 bytes in 0 blocks

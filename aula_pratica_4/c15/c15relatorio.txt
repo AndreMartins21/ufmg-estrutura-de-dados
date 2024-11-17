@@ -1,0 +1,5 @@
+1. A única inconveniência que encontrei, foi que o a nunca vai ter um valor diferente de 1 e 2, devido a estar sendo declarado dentro da iteração.
+Teria de declaração antes do 'for'
+
+2. 
+valgrind nem o GDB encontraram esse bug
