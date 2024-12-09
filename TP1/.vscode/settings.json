@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ord_indireta.h": "c",
+        "alg_ordenacao.h": "c"
+    }
+}
